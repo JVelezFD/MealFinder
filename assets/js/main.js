@@ -18,4 +18,32 @@ recipe.appendChild(recipe1);
  recipe1.innerHTML=data.items[i].htmlTitle;
 
   }
- })
+ youtubeAPI
+ });
+
+
+ //youtube api
+ // get meal name from google search?
+ var mealName = "fish-tacos"; //sample meal name
+ let ytApiKey = "AIzaSyD-YLZ0by6WplSCkblIufQSI-2tE_W5Vpw"; 
+ let searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
+
+ fetch(searchLink)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log('Raw data from search results');
+    console.log(data);
+    console.log('Individual search result items:');
+    console.log(data.items);
+  });
+
+
+
+ 
+
+
+
+
+main
