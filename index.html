@@ -5,38 +5,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>---> 
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <title>Meal Finder</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/icons8-ingredients-48.png">
 </head>
 
 <body>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">Meal Finder</div>
 
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
 
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li class="services">
+              <a href="/">Services</a>
 
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/">Dropdown 1 </a></li>
+                <li><a href="/">Dropdown 2</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+    
+    <!----side bar--->
+    <div>
+        <aside>
+            <h2>About</h2>
+            <p>
+              Meal finder will help you decide on
+          what your next meal will be. Tell us the meal, click on a recipe 
+          and it’ll show you step by step instructions with links to videos provided.
+            </p>
+          </aside>
+        </div>
+    
+         <!--start of carousel--->
+         <div class="carousel-wrapper">
+            <span id="item-1"></span>
+            <span id="item-2"></span>
+            <span id="item-3"></span>
+            <div class="carousel-item item-1">
+              <a href="#item-3" class="arrow-prev arrow"></a>
+              <a href="#item-2" class="arrow-next arrow"></a>
+            </div>
+        
+            <div class="carousel-item item-2">
+              <a href="#item-1" class="arrow-prev arrow"></a>
+              <a href="#item-3" class="arrow-next arrow"></a>
+            </div>
+        
+            <div class="carousel-item item-3">
+              <a href="#item-2" class="arrow-prev arrow"></a>
+              <a href="#item-1" class="arrow-next arrow"></a>
+            </div>
+        
+          </div>
+    
+    <!---end of carousel-->
+    
+    <div>
+    <img class="icons" id="map" src="/assets/images/map.png">
+    <img class="icons" id="cutlery" src="/assets/images/pieces-of-cutlery.png">
+    <img class="icons" id="recipe" src="/assets/images/recipe.png">
+    </div>
+      </div>
+    <!---featured meals--->
+    <div>
+      <h3>
+        Featured
+    </h3>
+    
+    <div>
+     <video id="Pancakes" class="video" width="420" height="340" controls preload="auto">
+      <source src="/assets/videos/How to Make Easy Pancakes Allrecipes.com.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+      
+          <video id="Alfredo" class="video" width="420" height="340" controls preload="auto">
+            <source src="/assets/videos/Easy Chicken Alfredo Penne.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    
+          <video id="Tacos" class="video" width="420" height="340" controls preload="auto">
+            <source src="/assets/videos/How To Make Birria Tacos.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+       <!--- <img src="/develop/images/image holder.png" alt="placeholder image"/>
+        <figcaption>food 1</figcaption>
+    
+        <img src="/develop/images/image holder.png" alt="placeholder image"/>
+        <figcaption>food 1</figcaption>
+    
+        <img src="/develop/images/image holder.png" alt="placeholder image"/>
+        <figcaption>food 1</figcaption>
+    --->
+    
+       </div>
+          </div>
+         
+    </body>
+    <!---footer-->
+    <div>
+    <footer>
+        <p>© 2022 Project 1: MealFinder</p>
+      </footer>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
+  
 </body>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+crossorigin="anonymous"></script>
 </html>
