@@ -16,5 +16,6 @@ let apiCall='https://www.googleapis.com/customsearch/v1?key=AIzaSyAokFh6lKdcKUYe
 var recipe1=document.createElement('p');
 recipe.appendChild(recipe1);
  recipe1.innerHTML=data.items[i].htmlTitle;
+
   }
  })
