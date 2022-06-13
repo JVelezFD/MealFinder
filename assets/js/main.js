@@ -47,3 +47,14 @@ recipe.appendChild(recipe1);
 
 
 main
+
+
+//origin of food api **in the works 
+
+function initMap(){
+  map = new google.maps.Map(document.getElementById('googlemaps'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8,
+      mapId: 'edaf7d20d0d3aa9d'
+  });
+}
