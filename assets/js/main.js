@@ -35,7 +35,8 @@ var mealName = meal;
 var recipeVidTitleEl = $(".recipeVidTitle");
 var recipeVidFrameEl = $(".recipeVidFrame");
 //old key: AIzaSyD-YLZ0by6WplSCkblIufQSI-2tE_W5Vpw
-var ytApiKey = "AIzaSyAbaqrxrs3TdOu7sGbZyN_ZPWOnXRH0aKs";
+//prev key: AIzaSyAbaqrxrs3TdOu7sGbZyN_ZPWOnXRH0aKs
+var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
 var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
 
 fetch(searchLink)
