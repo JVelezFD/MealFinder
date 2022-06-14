@@ -18,26 +18,19 @@
 //  recipe1.innerHTML=data.items[i].htmlTitle;
 
 //   }
-//  youtubeAPI();
+//  youtubeAPI;
 //  });
 
 
 //youtube api
 // get meal name from google search?
+var mealName = "fish-tacos"; //sample meal name
+
 var recipeVidTitleEl = $(".recipeVidTitle");
 var recipeVidFrameEl = $(".recipeVidFrame");
-var mealName = "fish-tacos"; //sample meal name
 //old key: AIzaSyD-YLZ0by6WplSCkblIufQSI-2tE_W5Vpw
 var ytApiKey = "AIzaSyAbaqrxrs3TdOu7sGbZyN_ZPWOnXRH0aKs";
 var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
-
-var vidDataArr = [];
-var vidObjArr = [];
-
-var videoObj = {
-  vidId: "",
-  vidTitle: "",
-}
 
 
   fetch(searchLink)
@@ -55,7 +48,6 @@ var videoObj = {
        var videoLink = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
        recipeVidFrameEl.attr("src",videoLink);
     });
-document.cookie = "SameSite=None; secure";
 
 
 
