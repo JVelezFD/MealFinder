@@ -1,9 +1,9 @@
-var choice1=document.getElementById("button1");
-var choice2=document.getElementById("button2");
-var choice3=document.getElementById("button3");
-var choicetext1=document.getElementById("button1").innerHTML;
-var choicetext2=document.getElementById("button2").innerHTML;
-var choicetext3=document.getElementById("button3").innerHTML;
+var choice1=document.getElementById("btnBreakfast");
+var choice2=document.getElementById("btnLunch");
+var choice3=document.getElementById("btnDinner");
+var choicetext1=document.getElementById("btnBreakfast").innerHTML;
+var choicetext2=document.getElementById("btnLunch").innerHTML;
+var choicetext3=document.getElementById("btnDinner").innerHTML;
 
 
 

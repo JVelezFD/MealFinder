@@ -308,6 +308,7 @@
     color: #0a0a0a;
     font-size: 30px;
   }
+<<<<<<< HEAD
   #button1,#button2,#button3{
   background-color: black;
     border: none;
@@ -320,3 +321,12 @@
     margin: 4px 2px;
     cursor: pointer;
   }
+=======
+
+  #googlemaps{
+    height:20vh;
+    width:20vh;
+    right:160vh;
+    top:300px;
+  }
+>>>>>>> main

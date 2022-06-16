@@ -9,7 +9,9 @@ let breakfastData;
 let lunchData;
 console.log(option);
 //edamam Api fetch
-let apiCall='https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=dinner%rolls%rice&type=public&mealType=Dinner'
+let googleapi='AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk';
+let apiCall='https://www.googleapis.com/customsearch/v1?key=AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk&cx=0376c30bf308d4095&q=breakfastrecipe';
+let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=dinner%rolls%rice&type=public&mealType=Dinner'
 let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=breakfast recipe&type=public&mealType=Breakfast";
 let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=lunch%soup%rice&type=public&mealType=lunch";
 let i=0;
@@ -39,7 +41,7 @@ function dinner(){
   }
   else{
   
- fetch(apiCall)
+ fetch(apiCall0)
         .then(function(response) {
          return response.json();
         })
@@ -142,3 +144,55 @@ next1.addEventListener("click", function() {
     lunch()
   }
 })
+  for(i=0;i<=b-1;i++){
+var recipe1=document.createElement('p');
+recipe.appendChild(recipe1);
+ recipe1.innerHTML=data.items[i].htmlTitle;
+
+  }
+ youtubeAPI;
+ });
+
+
+
+var meal = "fish-tacos"; //sample meal name
+
+//get actual value of "meal" from google search/recipe?
+displayVideo(meal);
+
+function displayVideo(meal) {
+//youtube api
+var mealName = meal; 
+
+var recipeVidTitleEl = $(".recipeVidTitle");
+var recipeVidFrameEl = $(".recipeVidFrame");
+
+var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
+var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
+
+fetch(searchLink)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    // console.log('Raw data from search results');
+    // console.log("data: ");
+    // console.log(data);
+    // console.log('Individual search result items:');
+    // console.log("data.item: ");
+    // console.log(data.items);
+    recipeVidTitleEl.text(data.items[0].snippet.title);
+    var videoLink = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
+    recipeVidFrameEl.attr("src",videoLink);
+  });
+};
+  
+
+
+
+ 
+
+
+
+
+
