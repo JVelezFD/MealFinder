@@ -308,3 +308,10 @@
     color: #0a0a0a;
     font-size: 30px;
   }
+
+  #googlemaps{
+    height:20vh;
+    width:20vh;
+    right:160vh;
+    top:300px;
+  }
