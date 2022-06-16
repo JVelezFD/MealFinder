@@ -7,13 +7,14 @@ let mealname=document.getElementById("mealname");
 let dinnerData;
 let breakfastData;
 let lunchData;
+let meal1;
 console.log(option);
 //edamam Api fetch
 let googleapi='AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk';
 let apiCall='https://www.googleapis.com/customsearch/v1?key=AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk&cx=0376c30bf308d4095&q=breakfastrecipe';
-let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=dinner%rolls%rice&type=public&mealType=Dinner'
-let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=breakfast recipe&type=public&mealType=Breakfast";
-let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=&app_key=&q=lunch%soup%rice&type=public&mealType=lunch";
+let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=dinner%rolls%rice&type=public&mealType=Dinner'
+let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=breakfast recipe&type=public&mealType=Breakfast";
+let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=lunch%soup%rice&type=public&mealType=lunch";
 let i=0;
 console.log(i);
 if(option==="Dinner"){
@@ -33,7 +34,9 @@ if(option==="Lunch"){
 function dinner(){ 
   if(i>=2){
     mealname.innerHTML="Dinner Recipe";
-     recipe.innerHTML=data.hits[i].recipe.label;
+     recipe.innerHTML=dinnerData.hits[i].recipe.label;
+     meal1=recipe.innerHTML;
+    displayVideo(meal1)
     img.src=dinnerData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
   location.href=dinnerData.hits[i].recipe.url;
@@ -58,6 +61,8 @@ function dinner(){
 //recipe.appendChild(recipe1);
 mealname.innerHTML="Dinner Recipe";
  recipe.innerHTML=data.hits[i].recipe.label;
+meal1=recipe.innerHTML;
+displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
   location.href=data.hits[i].recipe.url;
@@ -70,6 +75,8 @@ function Breakfast(){
    if(i>=2){
      mealname.innerHTML="Breakfast Recipe";
      recipe.innerHTML=breakfastData.hits[i].recipe.label;
+      meal1=recipe.innerHTML;
+    displayVideo(meal1)
     img.src=breakfastData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
   location.href=breakfastData.hits[i].recipe.url;
@@ -92,6 +99,8 @@ function Breakfast(){
 //recipe.appendChild(recipe1);
 mealname.innerHTML="Breakfast Recipe";
 recipe.innerHTML=data.hits[i].recipe.label;
+ meal1=recipe.innerHTML;
+  displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
   location.href=data.hits[i].recipe.url;
@@ -104,6 +113,8 @@ function lunch(){
    if(i>=2){
      mealname.innerHTML="Lunch Recipe";
      recipe.innerHTML=lunchData.hits[i].recipe.label;
+      meal1=recipe.innerHTML;
+     displayVideo(meal1)
     img.src=lunchData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
   location.href=lunchData.hits[i].recipe.url;
@@ -120,6 +131,8 @@ function lunch(){
 
 mealname.innerHTML="Lunch Recipe";       
 recipe.innerHTML=data.hits[i].recipe.label;
+meal1=recipe.innerHTML;
+displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
   location.href=data.hits[i].recipe.url;
@@ -144,18 +157,16 @@ next1.addEventListener("click", function() {
     lunch()
   }
 })
-  for(i=0;i<=b-1;i++){
-var recipe1=document.createElement('p');
-recipe.appendChild(recipe1);
- recipe1.innerHTML=data.items[i].htmlTitle;
+  //for(i=0;i<=b-1;i++){
+//var recipe1=document.createElement('p');
+//recipe.appendChild(recipe1);
+ //recipe1.innerHTML=data.items[i].htmlTitle;
 
-  }
- youtubeAPI;
- });
+  //}
+ //youtubeAPI;
+ //});
+var meal = "fish-tacos"; //sample meal name 
 
-
-
-var meal = "fish-tacos"; //sample meal name
 
 //get actual value of "meal" from google search/recipe?
 displayVideo(meal);
@@ -187,6 +198,9 @@ fetch(searchLink)
   });
 };
   
+
+
+
 
 
 
