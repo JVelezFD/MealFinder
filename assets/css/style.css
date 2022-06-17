@@ -93,6 +93,18 @@ background-color:#ffffff
     height: 100%;
     width: 100%;
   }
+  #button1,#button2,#button3{
+  background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 
   .item-2 {
     background: url('/assets/images/item2.jpeg');
@@ -319,7 +331,6 @@ height: 50px;
 
 }
 
-
 .addItems-container, .displayItems-container{
   margin: 1rem 0;
   padding: 2rem;
@@ -461,3 +472,13 @@ height: 50px;
   }
 }
 
+  #googlemaps{
+    height:20vh;
+    width:20vh;
+    right:160vh;
+    top:300px;
+  }
+
+  
+
+  
