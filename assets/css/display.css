@@ -1,0 +1,48 @@
+body {
+    font-family: 'Poppins', 'Kanit', sans-serif, Arial;
+}
+
+.displayBg {
+    background-color: #4b4b4b;
+}
+
+
+.displayAction {
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
+    animation-delay: calc(2 * var(--stagger-delay));  
+
+
+}
+
+
+.displayContent{
+
+    --stagger-delay: 100ms;
+ 
+}
+
+@keyframes change {
+    0% {
+        background-position: left;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+@keyframes cardEntrance{
+    from{
+        opacity: 0;
+        transform: scale(0.3);
+        filter: hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+}
