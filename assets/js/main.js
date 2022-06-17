@@ -13,8 +13,13 @@ console.log(option);
 let googleapi='AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk';
 let apiCall='https://www.googleapis.com/customsearch/v1?key=AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk&cx=0376c30bf308d4095&q=breakfastrecipe';
 let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=dinner%rolls%rice&type=public&mealType=Dinner'
+<<<<<<< HEAD
 let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=breakfast%pancakes%bread&type=public&mealType=Breakfast";
 let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=lunch%chicken%rice&type=public&mealType=lunch";
+=======
+let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=breakfast recipe&type=public&mealType=Breakfast";
+let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=lunch%soup%rice&type=public&mealType=lunch";
+>>>>>>> 243ac8ecd408d9a757cfd1ab8eab88d9182841a8
 let i=0;
 console.log(i);
 if(option==="Dinner"){
