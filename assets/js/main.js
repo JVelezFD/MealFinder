@@ -201,9 +201,7 @@ fetch(searchLink)
     console.log(data.items[0].snippet.description);
   });
 };
-  
-
-
+ 
 
 
 
