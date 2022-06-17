@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <title>Shopping List</title>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <!-- LOGO -->
+        <div class="logo">
+        <li><a href="/index.html" style="color:white;">Meal Finder</a></li>
+    </div>
+
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/display.html">Recipes</a></li>
+            <li><a href="/shoppinglist.html">Shopping List</a></li>
+            </li>
+        </ul>
+
+    <!-- add items -->
+    <div class="addItems-container">
+        <h4 class="addItems-action">display action</h4>
+        <h2 class="addItems-title">add grocery items</h2>
+        <form action="">
+            <input type="text" name="" id="" class="addItems-input">
+            <button type="submit" class="addItems-submit">submit here</button>
+        </form>
+    </div>
+    <!-- display items-->
+    <div class="displayItems-container">
+        <h4 class="displayItems-action">display action</h4>
+        <h2 class="displayItems-title">grocery items</h2>
+        <div class="grocery-list">
+            <!--grocery item-->
+            <!-- <div class="grocery-item">
+                <h4 class="grocery-item__title">item</h4>
+                <a href="#" class="grocery-item__link">
+                    <i class="far fa-trash-alt"></i>
+                </a> -->
+            </div>
+            <!-- end grocery item -->
+            <button type="submit" class="displayItems-clear">clear items</button>
+        </div>
+    </div>
+
+    <script src="/assets/js/shoppinglist.js"></script>
+
+    <footer>
+        <p>© 2022 Project 1: MealFinder</p>
+      </footer>
+</body>
+</html>

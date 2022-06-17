@@ -197,9 +197,7 @@ fetch(searchLink)
     recipeVidFrameEl.attr("src",videoLink);
   });
 };
-  
-
-
+ 
 
 
 
