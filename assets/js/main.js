@@ -180,11 +180,18 @@ previous1.addEventListener("click", function() {
   //}
  //youtubeAPI;
  //});
-var meal = "fish-tacos"; //sample meal name 
+//var meal = "fish-tacos"; //sample meal name 
 
 
 //get actual value of "meal" from google search/recipe?
-displayVideo(meal);
+//displayVideo(meal);
+
+
+//var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
+// var ytApiKey = 'AIzaSyDDJMMUoCy1yD_I63tWvovosXeOiq0frZU';
+//var ytApiKey = 'AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk'; //published api key
+var ytApiKey = 'AIzaSyDDJMMUoCy1yD_I63tWvovosXeOiq0frZU';
+var vidId = '';
 
 function displayVideo(meal) {
 //youtube api
@@ -193,26 +200,46 @@ var mealName = meal;
 var recipeVidTitleEl = $(".recipeVidTitle");
 var recipeVidFrameEl = $(".recipeVidFrame");
 
-var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
+
 var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
+
 
 fetch(searchLink)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    // console.log('Raw data from search results');
-    // console.log("data: ");
-    // console.log(data);
-    // console.log('Individual search result items:');
-    // console.log("data.item: ");
-    // console.log(data.items);
+    console.log("data: ");
+    console.log(data);
     recipeVidTitleEl.text(data.items[0].snippet.title);
+    console.log(data.items[0].snippet.title);
     var videoLink = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
     recipeVidFrameEl.attr("src",videoLink);
+    displayDescription(data.items[0].id.videoId);
   });
 };
- 
+
+
+function displayDescription(vidId) {
+  var videoId = vidId;
+  var videoDescriptEl = $('.videoDescript');
+  var descriptSearch = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=' + videoId + '&key=' + ytApiKey;
+
+  fetch (descriptSearch)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log("data: ");
+    console.log(data);
+    console.log(data.items[0].snippet.description);
+    videoDescriptEl.text(data.items[0].snippet.description);
+  });
+
+};
+
+
+
 
 
 
