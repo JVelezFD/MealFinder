@@ -152,7 +152,14 @@ background-color:#ffffff
  .nav-links a {
   color: #fff;
   position: relative;
-  left: 340px;
+  left:250px;
+  
+ }
+
+ .nav-liks a {
+  color: #fff;
+  position: relative;
+  left:350px;
   
  }
  /* LOGO */
@@ -303,9 +310,6 @@ h3{
   color: #0a0a0a;
   font-size: 30px;
 }
-
-
-
 
 
 /*shopping list*/
