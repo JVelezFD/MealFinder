@@ -85,7 +85,7 @@ background-color:#ffffff
   .item-1 {
     z-index: 2;
     opacity: 1;
-    background: url(/assets/images/item4.jpg);
+    background-image: url("/assets/images/item4.jpg");
     background-size: 799px 400px;
     position: absolute;
     background-position: center;
@@ -107,7 +107,7 @@ background-color:#ffffff
     }
 
   .item-2 {
-    background: url(/assets/images/item2.jpeg);
+    background-image: url("/assets/images/item2.jpeg");
     background-size: 799px 400px;
     position: absolute;
     background-position: center;
@@ -117,7 +117,7 @@ background-color:#ffffff
   }
 
   .item-3 {
-    background: url(/assets/images/item3.jpg);
+    background-image: url("/assets/images/item3.jpg");
     background-size: 800px 400px;
   position: absolute;
   background-position: center;
