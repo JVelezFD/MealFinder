@@ -152,7 +152,14 @@ background-color:#ffffff
  .nav-links a {
   color: #fff;
   position: relative;
-  left: 340px;
+  left:250px;
+  
+ }
+
+ .nav-liks a {
+  color: #fff;
+  position: relative;
+  left:350px;
   
  }
  /* LOGO */
@@ -316,10 +323,6 @@ h3{
     margin: 4px 2px;
     cursor: pointer;
   }
-
-button {
-  display: none;
-}
 
 /*shopping list*/
 .addItems-container{
