@@ -1,5 +1,6 @@
 let recipe=document.getElementById("recipe");
 let next1=document.getElementById("next1");
+let previous1=document.getElementById("previous1");
 var option=localStorage.getItem("choice");
 let img=document.getElementById("image1");
 let recipedetail=document.getElementById("recipedetail");
@@ -39,7 +40,7 @@ function dinner(){
     displayVideo(meal1)
     img.src=dinnerData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
-  location.href=dinnerData.hits[i].recipe.url;
+  location.href=dinnerData.hits[i].recipe.shareAs;
     })
   }
   else{
@@ -65,7 +66,7 @@ meal1=recipe.innerHTML;
 displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
-  location.href=data.hits[i].recipe.url;
+  location.href=data.hits[i].recipe.shareAs;
 })
   })
 }
@@ -79,7 +80,7 @@ function Breakfast(){
     displayVideo(meal1)
     img.src=breakfastData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
-  location.href=breakfastData.hits[i].recipe.url;
+  location.href=breakfastData.hits[i].recipe.shareAs;
     })
   }
   else{
@@ -103,7 +104,7 @@ recipe.innerHTML=data.hits[i].recipe.label;
   displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
-  location.href=data.hits[i].recipe.url;
+  location.href=data.hits[i].recipe.shareAs;
   })
   })
 }
@@ -117,7 +118,7 @@ function lunch(){
      displayVideo(meal1)
     img.src=lunchData.hits[i].recipe.images.REGULAR.url;
     recipedetail.addEventListener('click', () => {
-  location.href=lunchData.hits[i].recipe.url;
+  location.href=lunchData.hits[i].recipe.shareAs;
     })
   }
   else{
@@ -135,7 +136,7 @@ meal1=recipe.innerHTML;
 displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
-  location.href=data.hits[i].recipe.url;
+  location.href=data.hits[i].recipe.shareAs;
   })
 
   })
@@ -146,6 +147,20 @@ recipedetail.addEventListener('click', () => {
 
 next1.addEventListener("click", function() {
   i=i+1;
+  console.log(i);
+  if(option==="Dinner"){
+  dinner()
+  }
+  else if ( option==="Breakfast"){
+  Breakfast()
+  }
+  else{
+    lunch()
+  }
+})
+
+previous1.addEventListener("click", function() {
+  i=i-1;
   console.log(i);
   if(option==="Dinner"){
   dinner()
