@@ -10,3 +10,5 @@ SO THAT I can come to a conclusion on what I will be eating within the day
 
 [Github Page](https://jvelezfd.github.io/MealFinder/)
 [Github Repo](https://github.com/JVelezFD/MealFinder)
+
+created with: Bootstrap Framework, HTML, CSS, JS, edamam recipe API, YouTube API
