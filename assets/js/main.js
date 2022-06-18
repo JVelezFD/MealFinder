@@ -172,47 +172,22 @@ previous1.addEventListener("click", function() {
     lunch()
   }
 })
-  //for(i=0;i<=b-1;i++){
-//var recipe1=document.createElement('p');
-//recipe.appendChild(recipe1);
- //recipe1.innerHTML=data.items[i].htmlTitle;
-
-  //}
- //youtubeAPI;
- //});
-//var meal = "fish-tacos"; //sample meal name 
 
 
-//get actual value of "meal" from google search/recipe?
-//displayVideo(meal);
-
-
-//var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
-// var ytApiKey = 'AIzaSyDDJMMUoCy1yD_I63tWvovosXeOiq0frZU';
-//var ytApiKey = 'AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk'; //published api key
-var ytApiKey = 'AIzaSyDDJMMUoCy1yD_I63tWvovosXeOiq0frZU';
-var vidId = '';
+var ytApiKey = 'AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk';
 
 function displayVideo(meal) {
-//youtube api
 var mealName = meal; 
-
 var recipeVidTitleEl = $(".recipeVidTitle");
 var recipeVidFrameEl = $(".recipeVidFrame");
-
-
 var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
-
 
 fetch(searchLink)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log("data: ");
-    console.log(data);
     recipeVidTitleEl.text(data.items[0].snippet.title);
-    console.log(data.items[0].snippet.title);
     var videoLink = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
     recipeVidFrameEl.attr("src",videoLink);
     displayDescription(data.items[0].id.videoId);
@@ -235,7 +210,6 @@ function displayDescription(vidId) {
     console.log(data.items[0].snippet.description);
     videoDescriptEl.text(data.items[0].snippet.description);
   });
-
 };
 
 
