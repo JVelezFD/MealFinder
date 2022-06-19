@@ -80,3 +80,20 @@ body {
     bottom: 0;
     color: gray;
    }
+   
+/* Map */
+.mapDiv {
+    height: 300px;
+}
+#map {
+    height: 100%;
+}
+
+.icons{
+    width: 34px;
+    height: 34px;
+    margin: 50px auto ;
+    top:510px;
+    right:50%;
+}
+    

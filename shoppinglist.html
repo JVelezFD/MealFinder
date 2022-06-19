@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="./assets/css/map.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -60,7 +60,20 @@
             <button type="submit" class="displayItems-clear">clear items</button>
         </div>
     </div>
+    <!-- MAPS -->
+   <!-- MAP BELOW -->
+   <div id="containerOne">
+    <div id="mapOne"></div>
+    <div id="sidebarOne">
+      <h2>Results</h2>
+      <ul id="placesOne"></ul>
+      <button id="moreOne">Load more results</button>
+    </div>
+  </div>
 
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF6AUlrzSwVYh0W4sorNd4Y_pyrZZWkTM&libraries=places&callback=initMap">
+</script>
     <script src="./assets/js/shoppinglist.js"></script>
 
     <footer>

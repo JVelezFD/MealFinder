@@ -39,9 +39,9 @@ function dinner(){
      meal1=recipe.innerHTML;
     displayVideo(meal1)
     img.src=dinnerData.hits[i].recipe.images.REGULAR.url;
-    recipedetail.addEventListener('click', () => {
-  location.href=dinnerData.hits[i].recipe.shareAs;
-    })
+  //   recipedetail.addEventListener('click', () => {
+  // location.href=dinnerData.hits[i].recipe.shareAs;
+  //   })
   }
   else{
   
@@ -70,7 +70,6 @@ recipedetail.addEventListener('click', () => {
 })
   })
 }
-  
 }
 function Breakfast(){
    if(i>=2){
@@ -106,6 +105,7 @@ img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
   location.href=data.hits[i].recipe.shareAs;
   })
+
   })
 }
 }
@@ -133,7 +133,7 @@ function lunch(){
 mealname.innerHTML="Lunch Recipe";       
 recipe.innerHTML=data.hits[i].recipe.label;
 meal1=recipe.innerHTML;
-displayVideo(meal1)
+displayVideo(meal1);
 img.src=data.hits[i].recipe.images.REGULAR.url;
 recipedetail.addEventListener('click', () => {
   location.href=data.hits[i].recipe.shareAs;
@@ -149,13 +149,16 @@ next1.addEventListener("click", function() {
   i=i+1;
   console.log(i);
   if(option==="Dinner"){
-  dinner()
+  dinner();
+  initMap();
   }
   else if ( option==="Breakfast"){
-  Breakfast()
+  Breakfast();
+  initMap();
   }
   else{
-    lunch()
+    lunch();
+    initMap();
   }
 })
 
@@ -163,19 +166,21 @@ previous1.addEventListener("click", function() {
   i=i-1;
   console.log(i);
   if(option==="Dinner"){
-  dinner()
+  dinner();
+  initMap();
   }
   else if ( option==="Breakfast"){
-  Breakfast()
+  Breakfast();
+  initMap();
   }
   else{
-    lunch()
+    lunch();
+    initMap();
   }
 })
 
 
 var ytApiKey = 'AIzaSyAsBXKaD9_eZFOU47VxHRgamxC7SBp-uU0';
-
 function displayVideo(meal) {
 var mealName = meal; 
 var recipeVidTitleEl = $(".recipeVidTitle");
@@ -215,12 +220,173 @@ function displayDescription(vidId) {
 
 
 
+// Google Maps
+
+let breakfastOrigin = ['american','british', 'american', 'american', 'american','american', 'french', 'mexican', 'mediterranean','american','british','american','american','british','italian', 'mexican', 'italian', 'american', 'french','american'];
+let lunchOrigin = ['french','south east asian', 'japan', 'south east asian', 'middle eastern', 'american', 'japanese', 'japanese', 'south east asian', 'japanese', 'american', 'middle eastern', 'south east asian', 'peruvian', 'russian', 'south east asia', 'american', 'american','american'];
+let dinnerOrigin = ['italian', 'french', 'american','american', 'south east asian' ,'american', 'south east asian', 'french', 'south east asian', 'american', 'mexican', 'nordic', 'korean', 'american', 'korean', 'japanese', 'mexican', 'south east asian', 'japanese', 'middle eastern'];
+
+let coordinates = [  //  USA 
+  {lat: 39.8765,
+  lng: -100.0195},
+  //  Italy
+  {lat: 43.0173, 
+  lng: 12.4484},
+  //  France
+  {lat: 46.6432, 
+  lng: 2.1176},
+  //  South East Asia
+  {lat: 14.4913, 
+  lng: 106.4630},
+  // Mexico
+  {lat: 24.0981, 
+  lng: -102.9505},
+  // Nordic Region
+  {lat: 63.0250,
+  lng: 16.3037},
+  // Korea
+  {lat: 25.1858, 
+  lng: 117.2977},
+  // Japan
+  {lat: 36.5938, 
+  lng: 138.7109},
+  // Middle East
+  {lat: 32.9816,
+  lng: 43.318},
+  // British
+ {lat:55.0072,
+  lng:-2.9295},
+  // Mediterranean
+  {lat: 39.5141, 
+  lng: 22.5282},
+  // Peruvian 
+  {lat:-10.2566, 
+  lng:-75.6277},
+  // Russian
+  {lat:62.7323,
+  lng: 93.8593},
+];
 
 
-
- 
-
+function initMap() { 
 
 
+  if(option==="Dinner"){
 
+      if (dinnerOrigin[i] === 'american'){
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;
+      } else if (dinnerOrigin[i] === 'italian'){
+        var latcoordinates = coordinates[1].lat;
+        var lngcoordinates = coordinates[1].lng;
+      } else if (dinnerOrigin[i] === 'french'){
+        var latcoordinates = coordinates[2].lat;
+        var lngcoordinates = coordinates[2].lng;
+      } else if (dinnerOrigin[i] === 'south east asian'){
+        var latcoordinates = coordinates[3].lat;
+        var lngcoordinates = coordinates[3].lng;
+      } else if (dinnerOrigin[i] === 'mexican'){
+        var latcoordinates = coordinates[4].lat;
+        var lngcoordinates = coordinates[4].lng;
+      } else if (dinnerOrigin[i] === 'nordic'){
+        var latcoordinates = coordinates[5].lat;
+        var lngcoordinates = coordinates[5].lng;
+      } else if (dinnerOrigin[i] === 'korea'){
+        var latcoordinates = coordinates[6].lat;
+        var lngcoordinates = coordinates[6].lng;
+      } else if (dinnerOrigin[i] === 'japanese'){
+        var latcoordinates = coordinates[7].lat;
+        var lngcoordinates = coordinates[7].lng;
+      } else if (dinnerOrigin[i] === 'middle eastern'){
+        var latcoordinates = coordinates[8].lat;
+        var lngcoordinates = coordinates[8].lng;
+      } else {
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;
+      };
+      
+     } else if(option==="Breakfast"){
+      if (breakfastOrigin[i] === 'american'){
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;
+      } else if (breakfastOrigin[i] === 'italian'){
+        var latcoordinates = coordinates[1].lat;
+        var lngcoordinates = coordinates[1].lng;
+      } else if (breakfastOrigin[i] === 'french'){
+        var latcoordinates = coordinates[2].lat;
+        var lngcoordinates = coordinates[2].lng;
+      } else if (breakfastOrigin[i] === 'south east asian'){
+        var latcoordinates = coordinates[3].lat;
+        var lngcoordinates = coordinates[3].lng;
+      } else if (breakfastOrigin[i] === 'mexican'){
+        var latcoordinates = coordinates[4].lat;
+        var lngcoordinates = coordinates[4].lng;
+      } else if (breakfastOrigin[i] === 'nordic'){
+        var latcoordinates = coordinates[5].lat;
+        var lngcoordinates = coordinates[5].lng;
+      } else if (breakfastOrigin[i] === 'korea'){
+        var latcoordinates = coordinates[6].lat;
+        var lngcoordinates = coordinates[6].lng;
+      } else if (breakfastOrigin[i] === 'japanese'){
+        var latcoordinates = coordinates[7].lat;
+        var lngcoordinates = coordinates[7].lng;
+      } else if (breakfastOrigin[i] === 'middle eastern'){
+        var latcoordinates = coordinates[8].lat;
+        var lngcoordinates = coordinates[8].lng;
+      } else {
+       console.log('wrong lat/lon')}
+
+    } else if(option==="Lunch"){
+      if (lunchOrigin[i] === 'american'){
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;
+      } else if (lunchOrigin[i] === 'italian'){
+        var latcoordinates = coordinates[1].lat;
+        var lngcoordinates = coordinates[1].lng;
+      } else if (lunchOrigin[i] === 'french'){
+        var latcoordinates = coordinates[2].lat;
+        var lngcoordinates = coordinates[2].lng;
+      } else if (lunchOrigin[i] === 'south east asian'){
+        var latcoordinates = coordinates[3].lat;
+        var lngcoordinates = coordinates[3].lng;
+      } else if (lunchOrigin[i] === 'mexican'){
+        var latcoordinates = coordinates[4].lat;
+        var lngcoordinates = coordinates[4].lng;
+      } else if (lunchOrigin[i] === 'nordic'){
+        var latcoordinates = coordinates[5].lat;
+        var lngcoordinates = coordinates[5].lng;
+      } else if (lunchOrigin[i] === 'korea'){
+        var latcoordinates = coordinates[6].lat;
+        var lngcoordinates = coordinates[6].lng;
+      } else if (lunchOrigin[i] === 'japanese'){
+        var latcoordinates = coordinates[7].lat;
+        var lngcoordinates = coordinates[7].lng;
+      } else if (lunchOrigin[i] === 'middle eastern'){
+        var latcoordinates = coordinates[8].lat;
+        var lngcoordinates = coordinates[8].lng;
+      } else if(lunchOrigin[i] === 'peruvian'){
+        var latcoordinates = coordinates[9].lat;
+        var lngcoordinates = coordinates[9].lng;
+      } else if(lunchOrigin[i] === 'peruvian'){
+        var latcoordinates = coordinates[10].lat;
+        var lngcoordinates = coordinates[10].lng;
+      } else {
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;}
+    }
+  
+
+  var myLatLng = {lat: latcoordinates, lng: lngcoordinates };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: myLatLng,
+  });
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+  });
+}
+
+window.initMap = initMap;
 
