@@ -1,4 +1,4 @@
-let recipe=document.getElementById("recipe");
+// let recipe=document.getElementById("recipe");
 let next1=document.getElementById("next1");
 let previous1=document.getElementById("previous1");
 var option=localStorage.getItem("choice");
@@ -65,9 +65,9 @@ mealname.innerHTML="Dinner Recipe";
 meal1=recipe.innerHTML;
 displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
-recipedetail.addEventListener('click', () => {
-  location.href=data.hits[i].recipe.shareAs;
-})
+// recipedetail.addEventListener('click', () => {
+//   location.href=data.hits[i].recipe.shareAs;
+// })
   })
 }
 }
@@ -78,9 +78,9 @@ function Breakfast(){
       meal1=recipe.innerHTML;
     displayVideo(meal1)
     img.src=breakfastData.hits[i].recipe.images.REGULAR.url;
-    recipedetail.addEventListener('click', () => {
-  location.href=breakfastData.hits[i].recipe.shareAs;
-    })
+    // recipedetail.addEventListener('click', () => {
+  // location.href=breakfastData.hits[i].recipe.shareAs;
+  //   })
   }
   else{
  fetch(apiCall1)
@@ -102,9 +102,9 @@ recipe.innerHTML=data.hits[i].recipe.label;
  meal1=recipe.innerHTML;
   displayVideo(meal1)
 img.src=data.hits[i].recipe.images.REGULAR.url;
-recipedetail.addEventListener('click', () => {
-  location.href=data.hits[i].recipe.shareAs;
-  })
+// recipedetail.addEventListener('click', () => {
+//   location.href=data.hits[i].recipe.shareAs;
+//   })
 
   })
 }
@@ -117,9 +117,9 @@ function lunch(){
       meal1=recipe.innerHTML;
      displayVideo(meal1)
     img.src=lunchData.hits[i].recipe.images.REGULAR.url;
-    recipedetail.addEventListener('click', () => {
-  location.href=lunchData.hits[i].recipe.shareAs;
-    })
+  //   recipedetail.addEventListener('click', () => {
+  // location.href=lunchData.hits[i].recipe.shareAs;
+  //   });
   }
   else{
  fetch(apiCall2)
@@ -212,7 +212,7 @@ function displayDescription(vidId) {
   .then(function (data) {
     console.log("data: ");
     console.log(data);
-    console.log(data.items[0].snippet.description);
+    // console.log(data.items[0].snippet.description);
     videoDescriptEl.text(data.items[0].snippet.description);
   });
 };
@@ -222,9 +222,9 @@ function displayDescription(vidId) {
 
 // Google Maps
 
-let breakfastOrigin = ['american','british', 'american', 'american', 'american','american', 'french', 'mexican', 'mediterranean','american','british','american','american','british','italian', 'mexican', 'italian', 'american', 'french','american'];
-let lunchOrigin = ['french','south east asian', 'japan', 'south east asian', 'middle eastern', 'american', 'japanese', 'japanese', 'south east asian', 'japanese', 'american', 'middle eastern', 'south east asian', 'peruvian', 'russian', 'south east asia', 'american', 'american','american'];
-let dinnerOrigin = ['italian', 'french', 'american','american', 'south east asian' ,'american', 'south east asian', 'french', 'south east asian', 'american', 'mexican', 'nordic', 'korean', 'american', 'korean', 'japanese', 'mexican', 'south east asian', 'japanese', 'middle eastern'];
+let breakfastOrigin = ['american','british', 'american', 'american', 'american','american', 'french', 'mexican', 'spain','american','british','american','american','british','italian', 'mexican', 'italian', 'american', 'french','american'];
+let lunchOrigin = ['french','south east asian', 'japanese', 'south east asian', 'thai', 'american', 'american', 'japanese', 'japanese', 'south east asian', 'japanese', 'south east asian', 'middle eastern', 'south east asian', 'peruvian', 'russian', 'south east asian', 'american', 'american','american'];
+let dinnerOrigin = ['american', 'american', 'american','japanese', 'south east asian' ,'american', 'south east asian', 'french', 'south east asian', 'american', 'mexican', 'japanese', 'south east asian', 'south east asian', 'south east asian', 'american', 'japanese', 'thai', 'south east asian', 'middle eastern'];
 
 let coordinates = [  //  USA 
   {lat: 39.8765,
@@ -265,6 +265,12 @@ let coordinates = [  //  USA
   // Russian
   {lat:62.7323,
   lng: 93.8593},
+  // Thai
+  {lat:15.3077, 
+  lng: 101.0616},
+  // Spain
+  {lat: 39.5593,
+  lng: -3.3724},
 ];
 
 
@@ -272,7 +278,7 @@ function initMap() {
 
 
   if(option==="Dinner"){
-
+    console.log('dinner');
       if (dinnerOrigin[i] === 'american'){
         var latcoordinates = coordinates[0].lat;
         var lngcoordinates = coordinates[0].lng;
@@ -291,7 +297,7 @@ function initMap() {
       } else if (dinnerOrigin[i] === 'nordic'){
         var latcoordinates = coordinates[5].lat;
         var lngcoordinates = coordinates[5].lng;
-      } else if (dinnerOrigin[i] === 'korea'){
+      } else if (dinnerOrigin[i] === 'korean'){
         var latcoordinates = coordinates[6].lat;
         var lngcoordinates = coordinates[6].lng;
       } else if (dinnerOrigin[i] === 'japanese'){
@@ -300,6 +306,24 @@ function initMap() {
       } else if (dinnerOrigin[i] === 'middle eastern'){
         var latcoordinates = coordinates[8].lat;
         var lngcoordinates = coordinates[8].lng;
+      } else if (dinnerOrigin[i] === 'british'){
+        var latcoordinates = coordinates[9].lat;
+        var lngcoordinates = coordinates[9].lng;
+      } else if (dinnerOrigin[i] === 'mediterranean'){
+        var latcoordinates = coordinates[10].lat;
+        var lngcoordinates = coordinates[10].lng;
+      } else if (dinnerOrigin[i] === 'peruvian'){
+        var latcoordinates = coordinates[11].lat;
+        var lngcoordinates = coordinates[11].lng;
+      } else if (dinnerOrigin[i] === 'russian'){
+        var latcoordinates = coordinates[12].lat;
+        var lngcoordinates = coordinates[12].lng;
+      } else if (dinnerOrigin[i] === 'thai'){
+        var latcoordinates = coordinates[13].lat;
+        var lngcoordinates = coordinates[13].lng;
+      }  else if (dinnerOrigin[i] === 'spain'){
+        var latcoordinates = coordinates[14].lat;
+        var lngcoordinates = coordinates[14].lng;
       } else {
         var latcoordinates = coordinates[0].lat;
         var lngcoordinates = coordinates[0].lng;
@@ -324,7 +348,7 @@ function initMap() {
       } else if (breakfastOrigin[i] === 'nordic'){
         var latcoordinates = coordinates[5].lat;
         var lngcoordinates = coordinates[5].lng;
-      } else if (breakfastOrigin[i] === 'korea'){
+      } else if (breakfastOrigin[i] === 'korean'){
         var latcoordinates = coordinates[6].lat;
         var lngcoordinates = coordinates[6].lng;
       } else if (breakfastOrigin[i] === 'japanese'){
@@ -333,20 +357,44 @@ function initMap() {
       } else if (breakfastOrigin[i] === 'middle eastern'){
         var latcoordinates = coordinates[8].lat;
         var lngcoordinates = coordinates[8].lng;
+      } else if (breakfastOrigin[i] === 'british'){
+        var latcoordinates = coordinates[9].lat;
+        var lngcoordinates = coordinates[9].lng;
+      } else if (breakfastOrigin[i] === 'mediterranean'){
+        var latcoordinates = coordinates[10].lat;
+        var lngcoordinates = coordinates[10].lng;
+      } else if (breakfastOrigin[i] === 'peruvian'){
+        var latcoordinates = coordinates[11].lat;
+        var lngcoordinates = coordinates[11].lng;
+      } else if (breakfastOrigin[i] === 'russian'){
+        var latcoordinates = coordinates[12].lat;
+        var lngcoordinates = coordinates[12].lng;
+      } else if (breakfastOrigin[i] === 'thai'){
+        var latcoordinates = coordinates[13].lat;
+        var lngcoordinates = coordinates[13].lng;
+      } else if (breakfastOrigin[i] === 'spain'){
+        var latcoordinates = coordinates[14].lat;
+        var lngcoordinates = coordinates[14].lng;
       } else {
-       console.log('wrong lat/lon')}
+        var latcoordinates = coordinates[0].lat;
+        var lngcoordinates = coordinates[0].lng;
+      };
 
     } else if(option==="Lunch"){
+      console.log('lunch');
       if (lunchOrigin[i] === 'american'){
+        console.log(lunchOrigin[i] + ' lunch origin');
         var latcoordinates = coordinates[0].lat;
         var lngcoordinates = coordinates[0].lng;
       } else if (lunchOrigin[i] === 'italian'){
+        console.log(lunchOrigin[i] + ' lunch origin');
         var latcoordinates = coordinates[1].lat;
         var lngcoordinates = coordinates[1].lng;
       } else if (lunchOrigin[i] === 'french'){
         var latcoordinates = coordinates[2].lat;
         var lngcoordinates = coordinates[2].lng;
       } else if (lunchOrigin[i] === 'south east asian'){
+        console.log(lunchOrigin[i] + ' lunch origin');
         var latcoordinates = coordinates[3].lat;
         var lngcoordinates = coordinates[3].lng;
       } else if (lunchOrigin[i] === 'mexican'){
@@ -364,17 +412,29 @@ function initMap() {
       } else if (lunchOrigin[i] === 'middle eastern'){
         var latcoordinates = coordinates[8].lat;
         var lngcoordinates = coordinates[8].lng;
-      } else if(lunchOrigin[i] === 'peruvian'){
+      } else if (lunchOrigin[i] === 'british'){
         var latcoordinates = coordinates[9].lat;
         var lngcoordinates = coordinates[9].lng;
-      } else if(lunchOrigin[i] === 'peruvian'){
+      } else if (lunchOrigin[i] === 'mediterranean'){
         var latcoordinates = coordinates[10].lat;
         var lngcoordinates = coordinates[10].lng;
+      } else if (lunchOrigin[i] === 'peruvian'){
+        var latcoordinates = coordinates[11].lat;
+        var lngcoordinates = coordinates[11].lng;
+      } else if (lunchOrigin[i] === 'russian'){
+        var latcoordinates = coordinates[12].lat;
+        var lngcoordinates = coordinates[12].lng;
+      } else if (lunchOrigin[i] === 'thai'){
+        var latcoordinates = coordinates[13].lat;
+        var lngcoordinates = coordinates[13].lng;
+      } else if (lunchOrigin[i] === 'spain'){
+        var latcoordinates = coordinates[14].lat;
+        var lngcoordinates = coordinates[14].lng;
       } else {
         var latcoordinates = coordinates[0].lat;
-        var lngcoordinates = coordinates[0].lng;}
+        var lngcoordinates = coordinates[0].lng;
+    };
     }
-  
 
   var myLatLng = {lat: latcoordinates, lng: lngcoordinates };
   const map = new google.maps.Map(document.getElementById("map"), {

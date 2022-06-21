@@ -153,18 +153,14 @@ background-color:#ffffff
   color: #fff;
   position: relative;
   left:250px;
-  
+  justify-content: flex-end;
  }
 
- .nav-liks a {
-  color: #fff;
-  position: relative;
-  left:350px;
-  
- }
+
  /* LOGO */
  .logo {
   font-size: 32px;
+  justify-content: flex-start;
 
  }
  /* NAVBAR MENU */
@@ -459,7 +455,7 @@ height: 50px;
 
 @media screen and (max-width: 1520px) {
   .navbar{
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
