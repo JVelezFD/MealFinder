@@ -58,16 +58,13 @@ body {
  }
  .nav-link {
   position: relative;
-  right:500px;
   display: inline-block;
   justify-content: space-between;
-  
  }
 
  .navbar-brand{
     font-size: 32px;
     position: relative;
-    right:300px;
  }
 
  footer{
